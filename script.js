@@ -99,3 +99,36 @@ document.querySelectorAll('.service-card').forEach(el => {
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(el);
 });
+
+// Handle Form Submit
+function handleFormSubmit(event) {
+    event.preventDefault(); // Prevents page reload
+    
+    const btn = event.target.querySelector('button');
+    const originalText = btn.innerText;
+    
+    // Simulate loading/sending state
+    btn.innerText = 'Enviando...';
+    btn.style.opacity = '0.7';
+    btn.disabled = true;
+    
+    // Simulate a network request
+    setTimeout(() => {
+        // Show success message
+        const successMsg = document.getElementById('form-success');
+        successMsg.classList.remove('hidden');
+        
+        // Reset form fields
+        event.target.reset();
+        
+        // Restore button state
+        btn.innerText = originalText;
+        btn.style.opacity = '1';
+        btn.disabled = false;
+        
+        // Hide success message after 5 seconds
+        setTimeout(() => {
+            successMsg.classList.add('hidden');
+        }, 5000);
+    }, 1500);
+}

@@ -104,6 +104,50 @@
         </div>
     </section>
 
+    <section id="contact" class="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Faça seu <span>Cadastro</span></h2>
+                <p>Agende uma visita ou cadastre-se para receber novidades e descontos exclusivos na manutenção do seu veículo.</p>
+                <ul class="info-list">
+                    <li>📍 Av. das Nações, 1000 - São Paulo, SP</li>
+                    <li>📞 (11) 99999-9999</li>
+                    <li>✉️ contato@autotech.com.br</li>
+                </ul>
+                <div class="map-container" style="margin-top: 2rem; border-radius: 1rem; overflow: hidden; border: 1px solid var(--glass-border);">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117006.1834241724!2d-46.7323868!3d-23.5852535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5a2b2ed7f3a1%3A0xab35da2f5ca62674!2sS%C3%A3o%20Paulo%2C%20SP!5e0!3m2!1spt-BR!2sbr!4v1714578125555!5m2!1spt-BR!2sbr" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form id="cadastroForm" onsubmit="handleFormSubmit(event)">
+                    <div class="input-group">
+                        <input type="text" id="nome" required placeholder="Seu Nome Completo">
+                    </div>
+                    <div class="input-group">
+                        <input type="email" id="email" required placeholder="Seu E-mail">
+                    </div>
+                    <div class="input-group">
+                        <input type="tel" id="telefone" required placeholder="Seu Telefone / WhatsApp">
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="placa" placeholder="Placa do Veículo (ex: ABC-1234)">
+                    </div>
+                    <div class="input-group">
+                        <select id="servico" required>
+                            <option value="" disabled selected>Selecione um serviço de interesse</option>
+                            <option value="preventiva">Manutenção Preventiva</option>
+                            <option value="diagnostico">Diagnóstico Computadorizado</option>
+                            <option value="suspensao">Suspensão e Freios</option>
+                            <option value="outro">Apenas Cadastro / Outros</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-primary w-100">Cadastrar e Agendar</button>
+                    <div id="form-success" class="form-success hidden">Cadastro realizado com sucesso! Em breve entraremos em contato.</div>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <div class="footer-content">
             <div class="footer-brand">
