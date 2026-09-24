@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoTech Premium | Oficina Mecânica</title>
+    <meta name="description" content="Sua oficina mecânica de confiança com serviços premium e diagnóstico interativo.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">AutoTech<span>.</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Início</a></li>
+            <li><a href="#services">Serviços</a></li>
+            <li><a href="#interactive">Diagnóstico</a></li>
+            <li><a href="#contact">Contato</a></li>
+        </ul>
+        <button class="btn-primary">Agendar Agora</button>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1>Performance e Precisão para seu Veículo</h1>
+            <p>Serviços mecânicos de alta qualidade com tecnologia de ponta. Experiência premium que seu carro merece.</p>
+            <div class="hero-buttons">
+                <button class="btn-primary" onclick="scrollToSection('services')">Ver Serviços</button>
+                <button class="btn-secondary" onclick="scrollToSection('interactive')">Diagnóstico Online</button>
+            </div>
+        </div>
+        <div class="hero-image-container">
+            <div class="blob-bg"></div>
+            <img src="hero-car.jpg" alt="Carro esportivo na oficina" id="hero-img" class="floating">
+        </div>
+    </header>
+
+    <section id="services" class="services">
+        <h2>Nossos <span>Serviços</span> Premium</h2>
+        <div class="services-grid">
+            <div class="service-card" onclick="toggleCard(this)">
+                <div class="icon">🔧</div>
+                <h3>Manutenção Preventiva</h3>
+                <p>Revisão completa para garantir a segurança e longevidade do seu veículo.</p>
+                <div class="card-details">
+                    <ul>
+                        <li>Troca de óleo e filtros</li>
+                        <li>Verificação de fluidos</li>
+                        <li>Inspeção de freios</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="service-card" onclick="toggleCard(this)">
+                <div class="icon">💻</div>
+                <h3>Diagnóstico Computadorizado</h3>
+                <p>Identificação precisa de falhas utilizando scanners de última geração.</p>
+                <div class="card-details">
+                    <ul>
+                        <li>Leitura de módulos</li>
+                        <li>Análise de injeção</li>
+                        <li>Reset de parâmetros</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="service-card" onclick="toggleCard(this)">
+                <div class="icon">⚙️</div>
+                <h3>Suspensão e Freios</h3>
+                <p>Reparos essenciais para a estabilidade e segurança da sua condução.</p>
+                <div class="card-details">
+                    <ul>
+                        <li>Troca de pastilhas e discos</li>
+                        <li>Amortecedores e molas</li>
+                        <li>Alinhamento 3D</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="interactive" class="interactive-section">
+        <h2>Simulador de <span>Diagnóstico</span></h2>
+        <p>Selecione onde está o problema no carro para ver as possíveis causas.</p>
+        
+        <div class="car-interactive">
+            <img src="car-wireframe.jpg" alt="Esquema de carro" class="car-wireframe">
+            
+            <div class="hotspot" style="top: 25%; left: 20%;" data-part="motor" onclick="showDiagnostic('motor', this)">
+                <span class="pulse"></span>
+            </div>
+            <div class="hotspot" style="top: 50%; left: 15%;" data-part="pneu" onclick="showDiagnostic('pneu', this)">
+                <span class="pulse"></span>
+            </div>
+            <div class="hotspot" style="top: 45%; left: 85%;" data-part="escapamento" onclick="showDiagnostic('escapamento', this)">
+                <span class="pulse"></span>
+            </div>
+            
+            <div id="diagnostic-panel" class="diagnostic-panel hidden">
+                <h3 id="diag-title">Problema</h3>
+                <p id="diag-desc">Descrição das possíveis causas.</p>
+                <button class="btn-primary" onclick="closeDiagnostic()">Fechar</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>AutoTech<span>.</span></h3>
+                <p>A excelência automotiva ao seu alcance.</p>
+            </div>
+            <div class="footer-links">
+                <p>© 2026 AutoTech. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
