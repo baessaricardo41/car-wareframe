@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <nav class="navbar">
         <div class="logo">AutoTech<span>.</span></div>
@@ -19,13 +21,14 @@
             <li><a href="#interactive">Diagnóstico</a></li>
             <li><a href="#contact">Contato</a></li>
         </ul>
-        <button class="btn-primary">Agendar Agora</button>
+        <button class="btn-primary" onclick="scrollToSection('contact')">Agendar Agora</button>
     </nav>
 
     <header id="home" class="hero">
         <div class="hero-content">
             <h1>Performance e Precisão para seu Veículo</h1>
-            <p>Serviços mecânicos de alta qualidade com tecnologia de ponta. Experiência premium que seu carro merece.</p>
+            <p>Serviços mecânicos de alta qualidade com tecnologia de ponta. Experiência premium que seu carro merece.
+            </p>
             <div class="hero-buttons">
                 <button class="btn-primary" onclick="scrollToSection('services')">Ver Serviços</button>
                 <button class="btn-secondary" onclick="scrollToSection('interactive')">Diagnóstico Online</button>
@@ -33,7 +36,7 @@
         </div>
         <div class="hero-image-container">
             <div class="blob-bg"></div>
-            <img src="hero-car.jpg" alt="Carro esportivo na oficina" id="hero-img" class="floating">
+            <img src="mustang-car.jpg" alt="Carro Mustang esportivo na oficina" id="hero-img" class="floating" style="border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
         </div>
     </header>
 
@@ -82,20 +85,21 @@
     <section id="interactive" class="interactive-section">
         <h2>Simulador de <span>Diagnóstico</span></h2>
         <p>Selecione onde está o problema no carro para ver as possíveis causas.</p>
-        
+
         <div class="car-interactive">
             <img src="car-wireframe.jpg" alt="Esquema de carro" class="car-wireframe">
-            
+
             <div class="hotspot" style="top: 25%; left: 20%;" data-part="motor" onclick="showDiagnostic('motor', this)">
                 <span class="pulse"></span>
             </div>
             <div class="hotspot" style="top: 50%; left: 15%;" data-part="pneu" onclick="showDiagnostic('pneu', this)">
                 <span class="pulse"></span>
             </div>
-            <div class="hotspot" style="top: 45%; left: 85%;" data-part="escapamento" onclick="showDiagnostic('escapamento', this)">
+            <div class="hotspot" style="top: 45%; left: 85%;" data-part="escapamento"
+                onclick="showDiagnostic('escapamento', this)">
                 <span class="pulse"></span>
             </div>
-            
+
             <div id="diagnostic-panel" class="diagnostic-panel hidden">
                 <h3 id="diag-title">Problema</h3>
                 <p id="diag-desc">Descrição das possíveis causas.</p>
@@ -108,14 +112,19 @@
         <div class="contact-container">
             <div class="contact-info">
                 <h2>Faça seu <span>Cadastro</span></h2>
-                <p>Agende uma visita ou cadastre-se para receber novidades e descontos exclusivos na manutenção do seu veículo.</p>
+                <p>Agende uma visita ou cadastre-se para receber novidades e descontos exclusivos na manutenção do seu
+                    veículo.</p>
                 <ul class="info-list">
                     <li>📍 Av. das Nações, 1000 - São Paulo, SP</li>
                     <li>📞 (11) 99999-9999</li>
                     <li>✉️ contato@autotech.com.br</li>
                 </ul>
-                <div class="map-container" style="margin-top: 2rem; border-radius: 1rem; overflow: hidden; border: 1px solid var(--glass-border);">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117006.1834241724!2d-46.7323868!3d-23.5852535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5a2b2ed7f3a1%3A0xab35da2f5ca62674!2sS%C3%A3o%20Paulo%2C%20SP!5e0!3m2!1spt-BR!2sbr!4v1714578125555!5m2!1spt-BR!2sbr" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="map-container"
+                    style="margin-top: 2rem; border-radius: 1rem; overflow: hidden; border: 1px solid var(--glass-border);">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117006.1834241724!2d-46.7323868!3d-23.5852535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5a2b2ed7f3a1%3A0xab35da2f5ca62674!2sS%C3%A3o%20Paulo%2C%20SP!5e0!3m2!1spt-BR!2sbr!4v1714578125555!5m2!1spt-BR!2sbr"
+                        width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
             <div class="contact-form">
@@ -142,7 +151,8 @@
                         </select>
                     </div>
                     <button type="submit" class="btn-primary w-100">Cadastrar e Agendar</button>
-                    <div id="form-success" class="form-success hidden">Cadastro realizado com sucesso! Em breve entraremos em contato.</div>
+                    <div id="form-success" class="form-success hidden">Cadastro realizado com sucesso! Em breve
+                        entraremos em contato.</div>
                 </form>
             </div>
         </div>
@@ -162,4 +172,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
